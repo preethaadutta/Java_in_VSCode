@@ -1,3 +1,5 @@
+/*
+//1) 'this' keyword is used to refer current class instance variable
 class Student
 {  
     int rollno;
@@ -25,4 +27,50 @@ class This_keyword
         s1.display();
         s2.display();
     }
+}
+*/ 
+/*
+//2) 'this' keyword is used to invoke current class method
+class A
+{
+    void m()
+    {
+        System.out.println("hello m");
+    }
+    void n()
+    {
+        System.out.println("hello n");
+        //m();//same as this.m();
+        this.m();  
+    }  
 }  
+class This_keyword
+{
+    public static void main(String args[])
+    {
+        A a=new A();
+        a.n();  
+    }
+}
+*/
+//3) 'this' keyword is used to invoke current class constructor
+class A
+{
+    A()
+    {
+        System.out.println("hello a");
+    }
+    A(int x)
+    {
+        this();
+        System.out.println(x);  
+    }  
+}  
+class This_keyword
+{
+    public static void main(String args[])
+    {
+        A a=new A(10);  
+    }
+}
+//For more information about 'this' keyword refer javatpoint.com
